@@ -14,6 +14,8 @@
 	let expanded = $state(false);
 	let lastTime = 0;
 	let rafId;
+	let touchStartX = null;
+	let touchStartY = null;
 
 	const asset = (path) => `${base}${path}`;
 	const selectedPaper = $derived(papers[selectedIndex]);
@@ -116,6 +118,35 @@
 		event.stopPropagation();
 	}
 
+	function handleTouchStart(event) {
+		const touch = event.touches?.[0];
+		if (!touch) return;
+		touchStartX = touch.clientX;
+		touchStartY = touch.clientY;
+	}
+
+	function handleTouchMove(event) {
+		const touch = event.touches?.[0];
+		if (!touch || touchStartX == null || touchStartY == null) return;
+		const dx = touch.clientX - touchStartX;
+		const dy = touch.clientY - touchStartY;
+		if (Math.abs(dx) > 18 && Math.abs(dx) > Math.abs(dy) + 6) {
+			event.preventDefault();
+		}
+	}
+
+	function handleTouchEnd(event) {
+		const touch = event.changedTouches?.[0];
+		if (!touch || touchStartX == null) return;
+		const dx = touch.clientX - touchStartX;
+		if (Math.abs(dx) >= 40) {
+			selectedIndex = (selectedIndex + (dx < 0 ? 1 : -1) + papers.length) % papers.length;
+			paused = true;
+		}
+		touchStartX = null;
+		touchStartY = null;
+	}
+
 	function makeMeta(paper) {
 		const raw = paper.src
 			.split("/")
@@ -149,6 +180,9 @@
 	aria-label="Interactive publication flow"
 	onclick={stopNavigation}
 	onwheel={handleWheel}
+	ontouchstart={handleTouchStart}
+	ontouchmove={handleTouchMove}
+	ontouchend={handleTouchEnd}
 	onmouseenter={() => (paused = true)}
 	onmouseleave={() => {
 		paused = false;
@@ -367,7 +401,7 @@
 		height: 2.4rem;
 		border-top: 1px solid rgba(255, 250, 246, 0.28);
 		border-left: 1px solid rgba(255, 250, 246, 0.28);
-		opacity: 0;
+		opacity: 0.44;
 		transition:
 			opacity 220ms ease,
 			transform 220ms ease,

@@ -424,7 +424,32 @@
 
 		.venn-circle span {
 			font-size: clamp(0.62rem, 2.8vw, 0.78rem);
-			max-width: 8rem;
+			max-width: 6.6rem;
+			letter-spacing: 0.08em;
+			white-space: normal;
+			line-height: 1.28;
+		}
+
+		.circle-government span {
+			left: 12%;
+			top: 24%;
+			right: auto;
+			text-align: left;
+		}
+
+		.circle-law span {
+			right: 12%;
+			top: 24%;
+			left: auto;
+			text-align: right;
+		}
+
+		.circle-cs span {
+			left: 50%;
+			top: auto;
+			bottom: 18%;
+			transform: translateX(-50%);
+			text-align: center;
 		}
 
 		.venn-center {

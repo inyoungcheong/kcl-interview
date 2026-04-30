@@ -1,4 +1,5 @@
 <script>
+	import { base } from "$app/paths";
 	import TalkMedia from "$components/TalkMedia.svelte";
 
 let { scene, active = false, onNext = () => {} } = $props();
@@ -39,7 +40,7 @@ let { scene, active = false, onNext = () => {} } = $props();
 							<span class="logo-connector" aria-hidden="true">x</span>
 						{/if}
 						<div class="logo-card">
-							<img src={logo.src} alt={logo.alt} style={`--logo-scale: ${logo.scale ?? 1};`} />
+							<img src={`${base}${logo.src}`} alt={logo.alt} style={`--logo-scale: ${logo.scale ?? 1};`} />
 						</div>
 					{/each}
 				</div>
