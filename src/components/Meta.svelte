@@ -3,14 +3,14 @@
 
 	let {
 		title = "Inyoung x Anthropic",
-		description = "A visual essay about Inyoung Cheong's path to AI safety and public-interest research at Anthropic.",
+		description = "A research presentation on legal and technical approaches to AI governance, grounded in public-interest practice.",
 		url = "https://inyoungcheong.github.io/kcl-interview",
 		keywords = "",
 		preloadFont = []
 	} = $props();
 
-	const image = $derived(`${url}/images/back.png`);
-	const favicon = $derived(`${base}/images/fab_london.png?v=2`);
+	const image = $derived(`${url}/images/theme.png`);
+	const favicon = $derived(`${base}/images/fabicon.png?v=3`);
 </script>
 
 <svelte:head>
