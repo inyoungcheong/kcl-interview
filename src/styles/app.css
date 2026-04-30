@@ -1,0 +1,133 @@
+@import "variables.css";
+@import "normalize.css";
+@import "font.css";
+@import "reset.css";
+@import "ui.css"; /* optional for bits UI components */
+
+/* colors defined in variables.css */
+:root {
+	/* font */
+	--font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--font-serif: "DM Serif Display", Georgia, Iowan Old Style, Times New Roman, Times, serif;
+	--font-mono: Menlo, Consolas, Monaco, monospace;
+
+	/* z-index */
+	--z-bottom: -1;
+	--z-base: 1;
+	--z-top: 10;
+	--z-overlay: 100;
+	--z-modal: 1000;
+
+	/* presets (used in reset.css) */
+	--font-body: var(--font-serif);
+	--font-form: var(--font-sans);
+
+	--radius-xs: 0.125rem;
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 1rem;
+
+	/* story-specific palette — custom */
+	--c-dark-teal:   #516363;
+	--c-mid-teal:    #63A6A6;
+	--c-teal:        #8ECED2;
+	--c-aqua:        #96D9D9;
+	--c-peach:       #F2DAC4;
+	--c-blush:       #F2D5DD;
+	--c-rose:        #F2C9DC;
+	--c-cream:       #FEF1EC;
+
+	--accent:        #516363;
+	--accent-mid:    #63A6A6;
+	--accent-light:  #8ECED2;
+	--text-dark:     #2a3535;
+	--text-light:    #FEF1EC;
+	--text-muted-light: rgba(254, 241, 236, 0.6);
+
+	/* section backgrounds — dark → light arc */
+	--bg-s0: #3a4f4f;   /* intro overlay */
+	--bg-s1: #516363;   /* hook */
+	--bg-s2: #63A6A6;   /* the move */
+	--bg-s3: #8ECED2;   /* vibe coding */
+	--bg-s4: #96D9D9;   /* safe AI */
+	--bg-s5: #516363;   /* anthropic — back to dark teal */
+	--bg-s6: #FEF1EC;   /* research */
+
+	--color-bg: var(--color-white);
+	--color-fg: var(--color-gray-900);
+	--color-fg-light: var(--color-gray-500);
+	--color-primary: var(--color-black);
+	--color-link: var(--color-black);
+	--color-link-hover: var(--color-black);
+	--color-focus: var(--color-gray-500);
+	--color-mark: var(--color-yellow);
+	--color-selection: var(--color-gray-300);
+	--color-border: var(--color-gray-300);
+	--color-button-fg-primary: var(--color-white);
+	--color-button-bg-primary: var(--color-gray-900);
+	--color-button-fg-secondary: var(--color-white);
+	--color-button-bg-secondary: var(--color-gray-500);
+	--color-input-bg: var(--color-gray-50);
+	--color-input-fg: var(--color-gray-900);
+	--color-placeholder: var(--color-gray-500);
+
+	/* "1" second duration */
+	--1s: 1ms;
+}
+
+/* dark theme */
+/* @media screen and (prefers-color-scheme:dark) {
+	:root {
+		
+	}
+} */
+
+@media screen and (prefers-reduced-motion: no-preference) {
+	:root {
+		--1s: 1s;
+	}
+}
+
+body {
+	background-color: #FFFFFF;
+}
+
+html {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
+}
+
+h1 {
+	font-size: var(--48px, 48px);
+}
+
+h2 {
+	font-size: var(--36px, 36px);
+}
+
+h3 {
+	font-size: var(--28px, 28px);
+}
+
+h4 {
+	font-size: var(--24px, 24px);
+}
+
+h5 {
+	font-size: var(--22px, 22px);
+}
+
+h6 {
+	font-size: var(--20px, 20px);
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
