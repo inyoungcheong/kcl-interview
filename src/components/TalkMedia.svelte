@@ -205,6 +205,7 @@
 		inset: 0;
 		display: grid;
 		place-items: center;
+		transform: translateY(-6.6vh);
 		background: radial-gradient(circle at 50% 52%, rgba(255, 250, 246, 0.07), transparent 34%);
 	}
 
@@ -420,6 +421,7 @@
 		.venn {
 			--venn-d: min(52vw, 240px);
 			--venn-k: min(8.2vw, 42px);
+			transform: translateY(-3.9vh);
 		}
 
 		.venn-circle span {
