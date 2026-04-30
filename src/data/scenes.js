@@ -299,7 +299,15 @@
 		eyebrow: "At King's College London",
 		title: "Contributing to participatory data empowerment",
 		text: "I hope to help build clinic-based research that connects communities, practitioners, and technical systems, including projects such as Consumer Reports.",
-		background: { type: "black" },
+		background: {
+			type: "video",
+			src: "/video/emotional_back.mp4",
+			fit: "cover",
+			position: "center center",
+			tone: "dark",
+			videoOpacity: 0.26,
+			shade: "light"
+		},
 		align: "center",
 		transition: "cut"
 	}

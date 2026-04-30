@@ -44,7 +44,7 @@
 
 <div
 	class={`media media-${background.type ?? "black"} tone-${background.tone ?? "standard"} fit-${background.fit ?? "cover"}`}
-	style={`--media-position: ${background.position ?? "center center"}; --portrait-overlay-opacity: ${background.overlayVideo?.opacity ?? 0.14}; --portrait-image-brightness: ${background.portraitBrightness ?? 1}; --portrait-overlay-saturation: ${background.overlayVideo?.saturation ?? 0.35}; --portrait-overlay-contrast: ${background.overlayVideo?.contrast ?? 1.02}; --portrait-overlay-brightness: ${background.overlayVideo?.brightness ?? 0.62}; --portrait-overlay-grayscale: ${background.overlayVideo?.grayscale ?? 0.42}; --venn-overlay-opacity: ${background.overlayVideo?.opacity ?? 0.2}; --venn-overlay-saturation: ${background.overlayVideo?.saturation ?? 0.36}; --venn-overlay-contrast: ${background.overlayVideo?.contrast ?? 1.04}; --venn-overlay-brightness: ${background.overlayVideo?.brightness ?? 0.4}; --venn-overlay-grayscale: ${background.overlayVideo?.grayscale ?? 0.5};`}
+	style={`--media-position: ${background.position ?? "center center"}; --video-opacity: ${background.videoOpacity ?? 1}; --portrait-overlay-opacity: ${background.overlayVideo?.opacity ?? 0.14}; --portrait-image-brightness: ${background.portraitBrightness ?? 1}; --portrait-overlay-saturation: ${background.overlayVideo?.saturation ?? 0.35}; --portrait-overlay-contrast: ${background.overlayVideo?.contrast ?? 1.02}; --portrait-overlay-brightness: ${background.overlayVideo?.brightness ?? 0.62}; --portrait-overlay-grayscale: ${background.overlayVideo?.grayscale ?? 0.42}; --venn-overlay-opacity: ${background.overlayVideo?.opacity ?? 0.2}; --venn-overlay-saturation: ${background.overlayVideo?.saturation ?? 0.36}; --venn-overlay-contrast: ${background.overlayVideo?.contrast ?? 1.04}; --venn-overlay-brightness: ${background.overlayVideo?.brightness ?? 0.4}; --venn-overlay-grayscale: ${background.overlayVideo?.grayscale ?? 0.5};`}
 >
 	{#if background.type === "video"}
 		<video bind:this={videoEl} muted loop={background.loop ?? true} playsinline preload="metadata">
@@ -121,6 +121,10 @@
 	.fit-cover video,
 	.fit-cover > img {
 		object-fit: cover;
+	}
+
+	.media-video video {
+		opacity: var(--video-opacity);
 	}
 
 	.fit-contain video,
