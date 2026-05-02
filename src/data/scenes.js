@@ -87,7 +87,7 @@
 	{
 		id: "legal-advice-study-1",
 		eyebrow: "",
-		title: "",
+		title: "How Attorneys Evaluate AI Legal Advice",
 		text: "",
 		background: {
 			type: "video",
@@ -104,7 +104,7 @@
 			venue: "ACM FAccT '26",
 			href: "https://dl.acm.org/doi/abs/10.1145/3630106.3659048"
 		},
-		align: "center",
+		align: "left-bottom",
 		transition: "fade"
 	},
 	{
@@ -168,7 +168,7 @@
 	{
 		id: "public-defender-study-1",
 		eyebrow: "",
-		title: "",
+		title: "How Public Defenders View AI Adoption in Their Practice",
 		text: "",
 		background: {
 			type: "video",
@@ -185,7 +185,7 @@
 			venue: "ACM FAccT '26",
 			href: "https://arxiv.org/abs/2510.22933"
 		},
-		align: "center",
+		align: "left-bottom",
 		transition: "fade"
 	},
 	{
@@ -249,7 +249,7 @@
 	{
 		id: "agent-eval-1",
 		eyebrow: "",
-		title: "",
+		title: "Conceptualizing AI Disloyalty",
 		text: "",
 		background: {
 			type: "video",
@@ -267,13 +267,13 @@
 			venue: "Preprint",
 			href: "https://inyoungcheong.github.io/assets/pdf/agents.pdf"
 		},
-		align: "center",
+		align: "left-bottom",
 		transition: "fade"
 	},
 	{
 		id: "agent-eval-2",
 		eyebrow: "",
-		title: "",
+		title: "Loyalty Evaluation Framework",
 		text: "",
 		background: {
 			type: "video",
@@ -291,14 +291,14 @@
 			venue: "Blog post, 2026",
 			href: "https://innovation.consumerreports.org/encoding-loyalty-principles-into-ai-agents-behavior/"
 		},
-		align: "center",
+		align: "left-bottom",
 		transition: "fade"
 	},
 	{
 		id: "kcl-fit",
-		eyebrow: "At King's College London",
-		title: "Contributing to participatory data empowerment",
-		text: "I hope to help build clinic-based research that connects communities, practitioners, and technical systems, including projects such as Consumer Reports.",
+		eyebrow: "What I bring to the Centre for Data Futures",
+		title: "",
+		text: "Stakeholder coordination across differently situated communities\n\nLaw-grounded technical infrastructure, from prototype to deployment\n\nComparative evidence across jurisdictions",
 		background: {
 			type: "video",
 			src: "/video/london2.mp4",
