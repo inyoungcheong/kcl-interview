@@ -33,6 +33,16 @@ let { scene, active = false, onNext = () => {} } = $props();
 			{#if scene.text}
 				<p class="text">{scene.text}</p>
 			{/if}
+			{#if scene.fitItems?.length}
+				<div class="fit-list" aria-label="What I bring">
+					{#each scene.fitItems as item}
+						<div class="fit-item">
+							<h2>{item.title}</h2>
+							<p>{item.text}</p>
+						</div>
+					{/each}
+				</div>
+			{/if}
 			{#if scene.logos?.length}
 				<div class="logo-strip" aria-label="Collaborating institutions">
 					{#each scene.logos as logo, index}
@@ -176,7 +186,17 @@ let { scene, active = false, onNext = () => {} } = $props();
 	}
 
 	.scene-kcl-fit .copy {
+		width: min(1100px, calc(100vw - 10vw));
 		transform: translateX(0.8vw);
+	}
+
+	.scene-kcl-fit .eyebrow {
+		margin-bottom: clamp(2rem, 4.4vw, 3.4rem);
+		font-size: clamp(1rem, 1.55vw, 1.55rem);
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		color: rgba(255, 250, 246, 0.86);
+		text-shadow: 0 2px 26px rgba(0, 0, 0, 0.72);
 	}
 
 	.scene-loyalty-eval .logo-card {
@@ -331,6 +351,44 @@ let { scene, active = false, onNext = () => {} } = $props();
 		letter-spacing: 0;
 		line-height: 1.55;
 		color: rgba(255, 250, 246, 0.68);
+	}
+
+	.fit-list {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(1rem, 2vw, 1.6rem);
+		max-width: 1080px;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.fit-item {
+		min-height: clamp(10.5rem, 19vw, 15rem);
+		padding: clamp(1.15rem, 2.1vw, 1.7rem);
+		border-top: 1px solid rgba(255, 250, 246, 0.38);
+		background: linear-gradient(180deg, rgba(255, 250, 246, 0.075), rgba(255, 250, 246, 0.022));
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+	}
+
+	.fit-item h2 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.55rem, 2.35vw, 2.45rem);
+		font-style: italic;
+		font-weight: 400;
+		line-height: 1.08;
+		color: #fffaf6;
+		text-wrap: balance;
+		text-shadow: 0 2px 26px rgba(0, 0, 0, 0.66);
+	}
+
+	.fit-item p {
+		margin: clamp(1.5rem, 3vw, 2.4rem) 0 0;
+		font-family: var(--font-sans);
+		font-size: clamp(0.9rem, 1.08vw, 1.08rem);
+		line-height: 1.55;
+		color: rgba(255, 250, 246, 0.78);
+		text-shadow: 0 2px 20px rgba(0, 0, 0, 0.56);
 	}
 
 	.caption {
@@ -517,6 +575,32 @@ let { scene, active = false, onNext = () => {} } = $props();
 
 		.thread-item p:last-child {
 			margin-top: 0.42rem;
+			font-size: clamp(0.74rem, 3.5vw, 0.88rem);
+			line-height: 1.42;
+		}
+
+		.scene-kcl-fit .eyebrow {
+			margin-bottom: 1.35rem;
+			font-size: clamp(0.78rem, 3.9vw, 1.05rem);
+			letter-spacing: 0.16em;
+		}
+
+		.fit-list {
+			grid-template-columns: 1fr;
+			gap: 0.7rem;
+		}
+
+		.fit-item {
+			min-height: 0;
+			padding: 0.9rem 0.95rem 1rem;
+		}
+
+		.fit-item h2 {
+			font-size: clamp(1.18rem, 5.2vw, 1.45rem);
+		}
+
+		.fit-item p {
+			margin-top: 0.76rem;
 			font-size: clamp(0.74rem, 3.5vw, 0.88rem);
 			line-height: 1.42;
 		}

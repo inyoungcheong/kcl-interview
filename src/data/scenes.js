@@ -298,7 +298,21 @@
 		id: "kcl-fit",
 		eyebrow: "What I bring to the Centre for Data Futures",
 		title: "",
-		text: "Stakeholder coordination across differently situated communities\n\nLaw-grounded technical infrastructure, from prototype to deployment\n\nComparative evidence across jurisdictions",
+		text: "",
+		fitItems: [
+			{
+				title: "Stakeholder coordination",
+				text: "Across differently situated communities, including public agencies, technical teams, legal experts, and affected groups."
+			},
+			{
+				title: "Law-grounded technical infrastructure",
+				text: "From prototype to deployment, with governance duties translated into tools, benchmarks, and evaluation practices."
+			},
+			{
+				title: "Comparative evidence",
+				text: "Across jurisdictions, connecting UK, US, and Korean experience to study how data governance works in practice."
+			}
+		],
 		background: {
 			type: "video",
 			src: "/video/london2.mp4",
